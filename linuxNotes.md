@@ -90,5 +90,24 @@ who [options] ##display user info
 -u ##idle time. display . for current, old for > 24hrs
 am i ##display for only current user (not all shells for example
 
-w ##display details of currently logged users
+w [options] ##display details of currently logged users
+
+last [options] ##display login logout times and info from user
+last 1 ##from first terminal
+    - /var/log/wtmp : pulls data from here
+
+id [options] [username] ##display id and gid number for user(s)
 ```
+
+### locations {#locations}
+
+/etc/skel/ : home directories use files from here. has template for .BASH_PROFILE/LOGOUT/RC
+/etc/passwd : contains user/group other informations about users and applications
+/etc/shadow : stores hashed passwords, passwords requirements
+/etc/group : like passwd but for groups
+/etc/passwd : accounts stored here
+/etc/login.defs : config for accounts 
+/home/<directory_name> : home directories
+/usr/share/doc/  ##what docs for commands live
+/var/log ##where import system log files live
+/var/log/wtmp : pulls data from here
