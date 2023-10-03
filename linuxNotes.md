@@ -4,7 +4,8 @@
 /usr/share/doc/  ##what docs for commands live
 ```
 
-### users/permissions
+### users
+---
 
 - su = sub user OR switch user. thus ```su root``` switch to root
 
@@ -59,7 +60,26 @@ passwd -l [username] ##lock user
 -u ##unlock
 ```
 
+#### account profiles
+
+- ~/.bashrc : user's own env file
+    - great for use with, eg, alias commands
+    - env variables ($PATH, $CDPATH, etc)
+    - set default directories and file permissions
+    - change prompt
+- ~/.bash_profile : provide shell config (runs once on login)
+    - comes from /etc/skel file
+- /etc/profile : runs at log in. system wide env variables 
+- ~/.profile : runs at every new shell
+- /etc/profile.d/ : directory for storing scripts for env variables
+    - set env variables here instead of alter /etc/profile file
+- /etc/bashrc : system wide config for specifically bash shell
+```bash
+
+```
+
 ### groups
+---
 - add groups.
     - /etc/group : like passwd but for group
     ```bash
@@ -99,15 +119,22 @@ last 1 ##from first terminal
 id [options] [username] ##display id and gid number for user(s)
 ```
 
-### locations {#locations}
+### locations
+---
 
-/etc/skel/ : home directories use files from here. has template for .BASH_PROFILE/LOGOUT/RC
-/etc/passwd : contains user/group other informations about users and applications
-/etc/shadow : stores hashed passwords, passwords requirements
-/etc/group : like passwd but for groups
-/etc/passwd : accounts stored here
-/etc/login.defs : config for accounts 
-/home/<directory_name> : home directories
-/usr/share/doc/  ##what docs for commands live
-/var/log ##where import system log files live
-/var/log/wtmp : pulls data from here
+- /etc/skel/ : home directories use files from here. has template for .BASH_PROFILE/LOGOUT/RC
+    - doesn't update existing accounts
+- /etc/profile : sets system wide env variables in real time. only runs at login
+- /etc/profile.d/ : directory for storing scripts for env variables
+- /etc/bashrc : system wide config for specifically bash shell
+- /etc/passwd : contains user/group other informations about users and applications
+- /etc/shadow : stores hashed passwords, passwords requirements
+- /etc/group : like passwd but for groups
+- /etc/passwd : accounts stored here
+- /etc/login.defs : config for accounts 
+- /home/<directory_name> : home directories
+- /usr/share/doc/  ##what docs for commands live
+- /var/log ##where import system log files live
+- /var/log/wtmp : pulls data from here
+- ~/.bashrc : user's own env file
+- ~/.profile : customization of /etc/profile. runs at every new shell
