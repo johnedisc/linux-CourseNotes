@@ -1,8 +1,4 @@
-### import log/doc situations
-```
-/var/log ##where import system log files live
-/usr/share/doc/  ##what docs for commands live
-```
+## users and groups
 
 ### users
 ---
@@ -138,3 +134,10 @@ id [options] [username] ##display id and gid number for user(s)
 - /var/log/wtmp : pulls data from here
 - ~/.bashrc : user's own env file
 - ~/.profile : customization of /etc/profile. runs at every new shell
+
+### import log/doc situations
+```
+/var/log ##where import system log files live
+/usr/share/doc/  ##what docs for commands live
+```
+
